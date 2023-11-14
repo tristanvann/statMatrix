@@ -1,0 +1,74 @@
+body, html {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #e5e3dc;
+}
+h2 {
+	font-family: sans-serif;
+	text-align: center;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+   opacity: 1;
+}
+.container {
+	width: 240px;
+	background: white;
+	padding: 20px 100px;
+	padding-bottom: 100px;
+	margin-top: 50px;
+	box-shadow: 2px 2px 15px rgb(0 0 0 / 35%);
+	float: left;
+	margin-left: 50px;
+}
+.settings {
+	text-align: right;
+}
+.settings .setting label,
+.abilities .ability label {
+	display: inline-block;
+	text-align: right;
+	margin: 6px 4px;
+}
+.abilities .ability label {
+	width: 100px;
+}
+.settings .setting input,
+.abilities .ability input {
+	width: 50px;
+	text-align: center;
+}
+.settings .button {
+	display: inline-block;
+	background: #dbdbdb;
+	text-transform: uppercase;
+	padding: 8px 20px;
+	margin-top: 14px;
+	font-family: sans-serif;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 13px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+.settings .button:hover {
+	background: #cacaca;
+}
+.matrix {
+	text-align: center;
+}
+.matrix table {
+	display: inline-block;
+	border-collapse: collapse;
+}
+.matrix tr.mid > td:not(.maintrix) td {padding-top: 7px;}
+.matrix table table td {
+	width: 20px;
+	text-align: center;
+	padding: 6px 7px;
+}
+.matrix .maintrix td {
+	border: 1px solid #8080805e;
+}

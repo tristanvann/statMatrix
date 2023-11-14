@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ability Score Matrix</title>
+    <link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body ng-app="abilityScores" ng-controller="mainCtrl">
+	<div class="container settings">
+		<h2>Settings</h2>
+		<div class="settings">
+			<div class="setting" ng-repeat="(opt, val) in options" ng-if="opt !== 'valid'">
+				<label>{{optionNames[opt]}}</label>
+				<input type="text" ng-model="options[opt]">
+			</div>
+			<div class="button" ng-click="generateMatrix(options)">Generate</div>
+		</div>
+		<h2>Matrix</h2>
+		<div class="main">
+			<div class="matrix">
+				<table>
+					<tbody>
+						<!-- <tr class="top"> -->
+							<!-- <td></td> -->
+							<!-- <td> -->
+								<!-- <table> -->
+									<!-- <tbody> -->
+										<!-- <tr> -->
+											<!-- <td ng-repeat="x in sizeArr"><i class="fas fa-long-arrow-alt-down"></i></td> -->
+										<!-- </tr> -->
+									<!-- </tbody> -->
+								<!-- </table> -->
+							<!-- </td> -->
+							<!-- <td></td> -->
+						<!-- </tr> -->
+						<tr class="mid">
+							<!-- <td> -->
+								<!-- <table> -->
+									<!-- <tbody> -->
+										<!-- <tr ng-repeat="y in sizeArr"><td><i class="fas fa-long-arrow-alt-right"></i></td></tr> -->
+									<!-- </tbody> -->
+								<!-- </table> -->
+							<!-- </td> -->
+							<td class="maintrix">
+								<table>
+									<tbody>
+										<tr ng-repeat="row in matrix track by $index">
+											<td ng-repeat="stat in row track by $index">{{stat}}</td>
+										</tr>					
+									</tbody>
+								</table>
+							</td>
+							<!-- <td></td> -->
+						</tr>
+						<!-- <tr class="bot"> -->
+							<!-- <td></td> -->
+							<!-- <td></td> -->
+							<!-- <td></td> -->
+						<!-- </tr> -->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="container scores"> -->
+		<!-- <h2>Ability Scores</h2> -->
+		<!-- <div class="abilities"> -->
+			<!-- <div class="ability" ng-repeat="ability in abilities"> -->
+				<!-- <label ng-class="ability.name">{{ability.name}}</label> -->
+				<!-- <input type="number" ng-model="ability.score"> -->
+			<!-- </div> -->
+		<!-- </div> -->
+	<!-- </div> -->
+	<script src="js/app.js"></script>
+  </body>
+</html>
